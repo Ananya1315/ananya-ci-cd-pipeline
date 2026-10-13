@@ -218,7 +218,7 @@ class RegistrationServiceTest {
 
         assertFalse(service.register(secondStudent, course));
 
-        // The original entry must remain unchanged
+
         assertEquals(1, service.getAuditLog().size());
         assertEquals(originalEntry, service.getAuditLog().get(0));
         assertFalse(secondStudent.isRegistered("CS306"));
