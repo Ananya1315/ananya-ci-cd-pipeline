@@ -1,14 +1,12 @@
-
+```groovy
 pipeline {
     agent any
 
-    stages {
-        stage('SCM Checkout') {
-            steps {
-                checkout scm
-            }
-        }
+    tools {
+        maven 'Maven-3.10'
+    }
 
+    stages {
         stage('Build') {
             steps {
                 bat 'mvn compile'
@@ -35,3 +33,4 @@ pipeline {
         }
     }
 }
+```
